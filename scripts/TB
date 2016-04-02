@@ -1,0 +1,2 @@
+xinput set-prop "Logitech M570" "Device Accel Constant Deceleration" 1.75
+#xinput set-prop "Logitech Unifying Device. Wireless PID:1028" "Device Accel Constant Deceleration" 1.75

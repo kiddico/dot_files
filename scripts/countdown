@@ -1,0 +1,18 @@
+#!/bin/bash
+minutes=$1
+seconds=60*minutes
+date1=$((`date +%s` + $seconds));
+while [ "$date1" -ge `date +%s` ]; do
+  echo -ne "$(date -u --date @$(($date1 - `date +%s` )) +%H:%M:%S)\r\n";
+done
+
+if [ $# == 2 ]; then
+	echo "1st"
+	for i in {1..6};
+	do
+		echo "$2" | espeak
+		sleep 1
+	done
+else
+	mplayer "/usr/local/share/sounds/alarm.mp3"
+fi
