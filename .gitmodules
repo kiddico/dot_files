@@ -1,3 +1,9 @@
 [submodule "config/i3_config"]
 	path = config/i3_config
 	url = https://github.com/kiddico/i3_config
+[submodule "paper/paper-gtk-theme"]
+	path = paper/paper-gtk-theme
+	url = https://github.com/snwh/paper-gtk-theme
+[submodule "paper/paper-icon-theme"]
+	path = paper/paper-icon-theme
+	url = https://github.com/snwh/paper-icon-theme
