@@ -33,6 +33,7 @@ alias glance="glances --byte -1 --tree"
 alias clock="tty-clock -sc"
 alias bbb="stress --cpu 8" # it's burn baby burn (=bbb) if you don't get it
 alias background="feh --bg-fill "
+alias glpp="g++ -lglut -lGLU -lGL"
 
 function cd (){
 	builtin cd "$@" && la
