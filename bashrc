@@ -25,5 +25,6 @@ shopt -s checkwinsize
 PS1='\[\e[1;31m\]\W! \[\e[m\]'
 
 # get rid of i3 funkyness
+# still want to know what does that
 # and start with the file list
 clear; ls
