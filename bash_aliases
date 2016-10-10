@@ -1,39 +1,40 @@
 #!/bin/bash
 
-
-#alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias rf="rm -rf"
-
-#alias google='lynx google.com'
-alias chrome="google-chrome-stable"
+#############
+# Built by Me
+alias glpp="g++ -lglut -lGLU -lGL"
+alias clock="tty-clock -sc"
 alias cls="clear; ls --hide="*~" --color=always"
-#alias cls="clear; exa"
 alias nstll="sudo apt-get update; sudo apt-get install -y"
-alias upnup="sudo apt-get update && sudo apt-get upgrade"
-alias ls='ls --hide="*~" --color=always'
-#alias ls='exa'
-alias sizes="du -skh *"
-alias lsa="ls -a"
-alias vimrc="vim ~/.vimrc"
-alias bashrc="vim ~/.bashrc"
-alias i3conf="vim ~/.config/i3/config"
-alias et="cd ~"
 alias qq="exit"
 alias twd="gnome-terminal & disown"
-alias ascii="figlet"
+alias sizes="du -skh *"
+alias ls='ls --hide="*~" --color=always'
+alias la='ls -A'
+alias rf="rm -rf"
+alias vimrc="vim ~/workshop/git-clones/dot_files/vimrc"
+alias bashrc="vim ~/workshop/git-clones/dot_files/bashrc"
+alias bash_aliases="vim ~/workshop/git-clones/dot_files/bash_aliases"
+
+#####################################################################
+# Still not sure of a better way to do this. They always need sudo...
 alias iftop="sudo iftop -c ~/.iftoprc"
 alias iotop="sudo iotop"
-alias glance="glances --byte -1 --tree"
-alias clock="tty-clock -sc"
+
+######################################################
+# I never use these, but sometime I might... keep 'em!
+alias upnup="sudo apt-get update && sudo apt-get upgrade"
+alias glance="glances --percpu --byte --tree"
 alias bbb="stress --cpu 8" # it's burn baby burn (=bbb) if you don't get it
-alias background="feh --bg-fill "
-alias glpp="g++ -lglut -lGLU -lGL"
+
+
+
+alias et="cd ~"
+
+
+#
+# Functions
+#
 
 function cd (){
 	builtin cd "$@" && la
