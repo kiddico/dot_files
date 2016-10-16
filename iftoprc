@@ -1,0 +1,3 @@
+max-bandwidth: 30M
+dns-resolution: no
+use-bytes: yes
