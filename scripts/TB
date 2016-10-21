@@ -4,9 +4,9 @@
 
 # This is the latest version that changes the coordinate transform matrix.
 # ID Matrix       Transform Matrix    Result           Result Expanded
-# [ 1, 0, 0 ]	  [ .75,   0, 0 ]	  [ .75 ]          [ .75,   0, 0 ]
-# [ 0, 1, 0 ]	* [   0, .75, 0 ]	= [ .75 ]  ( AKA ) [   0, .75, 0 ]
-# [ 0, 0, 1 ]	  [   0,   0, 1 ]	  [  1  ]          [   0,   0, 1 ]
+# [ 1, 0, 0 ]     [ .75,   0, 0 ]     [ .75 ]          [ .75,   0, 0 ]
+# [ 0, 1, 0 ]   * [   0, .75, 0 ]   = [ .75 ]  ( AKA ) [   0, .75, 0 ]
+# [ 0, 0, 1 ]     [   0,   0, 1 ]     [  1  ]          [   0,   0, 1 ]
 # This reduces the scale of the mapping between the input, and the resulting cursor movement.
 # Right now we reduce to 75%.
 xinput set-prop 'Logitech M570' 'Coordinate Transformation Matrix' 0.75 0 0 0 .75 0 0 0 1
