@@ -55,6 +55,8 @@ filetype plugin indent on
 
 set list
 set listchars=tab:›\ ,trail:˙
+set modelines=5
+
 
 autocmd FileType python set noexpandtab
 autocmd FileType python set tabstop=4
