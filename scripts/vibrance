@@ -4,13 +4,11 @@ if [[ $(nvidia-settings -q "DigitalVibrance" | grep "Attribute.*$VAL\.") ]]
 then
     nvidia-settings -a "DigitalVibrance=0" > /dev/null
     redshift -l 41.154426:-81.333052 & disown
-    #nvidia-settings -a [fan:0]/GPUCurrentFanSpeed=35
     nvidia-settings -a "[fan-0]/GPUTargetFanSpeed=15"
     echo "Vibrance Disabled"
 else 
     nvidia-settings -a "DigitalVibrance=$VAL" > /dev/null
     sudo killall redshift
     nvidia-settings -a "[fan-0]/GPUTargetFanSpeed=75"
-    #nvidia-settings -a [fan:0]/GPUCurrentFanSpeed=80
     echo "Vibrance Enabled"
 fi
