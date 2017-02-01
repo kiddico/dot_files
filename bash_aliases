@@ -28,16 +28,12 @@ alias glance="glances --percpu --byte --tree"
 alias bbb="stress --cpu 8" # it's burn baby burn (=bbb) if you don't get it
 
 
-
-alias et="cd ~"
-
-
 #
 # Functions
 #
 
 function cd (){
-	builtin cd "$@" && la
+	builtin cd "$@" && ls
 }
 
 fuck(){
