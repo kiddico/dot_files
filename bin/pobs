@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ~/.bin/obs-portable/bin/64bit/
+./obs -p & disown
