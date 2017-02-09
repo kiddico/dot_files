@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+dir=$(dirname $0)
+source $dir/util.sh
+
+full=""
+short=""
+status=0
+
+URL='http://www.accuweather.com/en/us/kent-oh/44240/weather-forecast/339994'
+SITE="$(curl -s "$URL")"
+
+weather="$(echo "$SITE" | awk -F\' '/acm_RecentLocationsCarousel\.push/{print $13 }'| head -1)"
+temp="$(echo "$SITE" | awk -F\' '/acm_RecentLocationsCarousel\.push/{print $10 }'| head -1)"
+
+if [[ $weather == *thunder* || $weather == *Thunder* ]]; then
+    icon=" "
+else
+    if [[ $weather == *rain* || $weather == *Rain* ]]; then
+        icon=""
+    else
+        if [[ $weather == *snow* || $weather == *Snow* ]]; then
+                icon=""
+        else
+            if [[ $weather == *cloud* || $weather == *Cloud* ]]; then
+                icon=""
+            else
+                icon=""
+            fi
+        fi
+    fi
+fi
+
+# Does not display if there's not temperature to display
+if [ $temp == "" ]; then
+	full=""
+	short=""
+else
+	full="$icon $temp°"
+	short="$temp°"
+fi
+
+# Left, Middle, Right, Up, Down
+case $BLOCK_BUTTON in
+1) gnome-weather --class floater;;
+2) ;;
+3) xdg-open "https://www.wunderground.com/us/oh/kent" 1>/dev/null|| :;;
+4) ;;
+5) ;;
+esac
+
+# This is a poor attempt to reduce the number of requests/refreshes
+# if [ $temp == "" ]; then
+# echo $full && ~/.config/i3/scripts/signalize.sh
+# else
+# echo $full
+# fi
+echo $full
+
+exit $status
