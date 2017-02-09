@@ -1,0 +1,109 @@
+"resource/layout/subpaneloptionscloud.layout" {
+	styles {
+		highlight {
+			textcolor=customgreyprimary
+			font-family=mediumfont
+			font-size=30
+			font-size=31 [$OSX]
+			font-style=normal
+		}
+	}
+	
+	layout {
+		place {
+			control=FamilySharingTextState
+			height=0
+		}
+		
+		region {
+			name=page
+			x=24
+			y=24
+			width=max
+			height=max
+			margin-right=24
+		}
+
+		place {
+			controls=FamilySharingTitle
+			region=page
+		}
+
+		place {
+			control=BorrowersLabel
+			region=page
+			start=FamilySharingTitle
+			dir=down
+			y=7
+			width=max
+		}
+
+		place {
+			control=BorrowersList
+			region=page
+			start=BorrowersLabel
+			dir=down
+			y=7
+			width=max
+			height=125
+		}
+
+		place {
+			control=ShowNotificationsCheck
+			start=BorrowersList
+			dir=down
+			y=7
+			width=max
+			height=18
+		}
+
+		place {
+			controls=AuthorizeDeviceButton,DeauthorizeDeviceButton,ManageSharingButton
+			region=page
+			start=ShowNotificationsCheck
+			dir=down
+			y=4
+			width=350
+			height=34
+			spacing=4
+		}
+
+		place {
+			controls=Divider1
+			start=ManageSharingButton
+			dir=down
+			x=46
+			y=19
+			width=max
+		}
+
+		place {
+			controls=FamilyOptionsTitle
+			region=page
+			start=Divider1
+			dir=down
+			x=-56
+			y=19
+		}
+
+		place {
+			control=FamilyOptionsText
+			region=page
+			start=FamilyOptionsTitle
+			width=max
+			dir=down
+			y=7
+		}
+
+		place {
+			controls=ManageOptionsButton
+			region=page
+			start=FamilyOptionsText
+			dir=down
+			y=4
+			width=350
+			height=34
+			spacing=4
+		}
+	}
+}
