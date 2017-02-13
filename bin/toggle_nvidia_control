@@ -1,12 +1,9 @@
 #!/bin/bash
 
 # If already set to manual, set auto, else 1/x.
-if [[ $(nvidia-settings -q [gpu:0]/GPUFanControlState) ]]
+if [[ $(nvidia-settings -qt [gpu:0]/GPUFanControlState) = "1" ]]
 then
-
+	nvidia-settings -a [gpu:0]/GPUFanControlState=0
 else
-
+	nvidia-settings -a [gpu:0]/GPUFanControlState=1
 fi
-
-
-nvidia-settings -a [gpu:0]/GPUFanControlState=1
