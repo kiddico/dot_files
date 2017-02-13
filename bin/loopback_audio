@@ -8,5 +8,5 @@ if [[ $(pactl list | grep "loopback") ]]
 then
 	pactl unload-module module-loopback
 else	
-	pactl load-module module-loopback latency_msec=1
+	pactl load-module module-loopback latency_msec=0
 fi
